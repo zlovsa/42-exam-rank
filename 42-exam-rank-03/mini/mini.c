@@ -27,8 +27,8 @@ int process(FILE *f)
 		return (0);
 	y = -1;
 	while(++y<h && (x=-1))
-		while(++x<w)
-			field[y][x] = c;
+		while(++x<=w)
+			field[y][x] = x == w ? '\n' : c;
 	float cx, cy, cr;
 	while ((rv = fscanf(f, "%c %f %f %f %c\n", &r, &cx, &cy, &cr, &c))==5
 		&& (r=='c' || r=='C') && cr>0 && (y=-1))
@@ -39,11 +39,8 @@ int process(FILE *f)
 	if (rv != EOF)
 		return (0);
 	y = -1;
-	while(++y<h)
-	{
-		write(1, field[y], w);
-		write(1, "\n", 1);
-	}
+	while (++y < h)
+		write(1, field[y], w + 1);
 	return (1);
 }
 
