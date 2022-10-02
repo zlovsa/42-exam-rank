@@ -1,4 +1,3 @@
-Exams of the ecole 42 (ru campus 21-school.ru).  
 Short yet still readable code.
 
 ## :white_check_mark: Exam Rank 02  
